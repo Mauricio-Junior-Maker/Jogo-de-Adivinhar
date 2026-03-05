@@ -3,66 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Jogo de Adivinhação (0 a 50)</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer></script>
+    <title>Jogo de Adivinhação!</title>
   </head>
-
   <body>
-    <div class="card">
-      <header>
-        <h1>Jogo de Adivinhação 🎲</h1>
-        <p class="sub">
-          Você tem <strong>5 tentativas</strong> para adivinhar um número de <strong>0 a 50</strong>.
-        </p>
-      </header>
 
-      <main>
-        <div class="meta">
-          <div class="pill">Tentativas restantes: <strong id="tries">5</strong></div>
-          <div class="pill">Intervalo: <strong>0–50</strong></div>
-        </div>
+  <div class="card">
+    <header>
+    <h1>Jogo de Adivinhação 🎲</h1>
+    <p class="sub">
+    Você tem <strong>5 tentativas</strong> para adivinhar um número de <strong>1 a 50</strong>.
+    </p>
+    </header>
 
-        <div class="row">
-          <div class="inputWrap">
-            <label for="guess">Seu chute</label>
-            <input id="guess" type="number" min="0" max="50" placeholder="Digite um número..." />
-            <div class="hint">Dica: pressione Enter para chutar.</div>
-          </div>
+  <main>
 
-          <div class="actions">
-            <button id="btnGuess" class="btnGuess" type="button">
-              <span class="btnIcon" aria-hidden="true">
-                <!-- Ícone (alvo) em SVG - imagem do botão "Chutar" -->
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 21a9 9 0 1 0-9-9 9 9 0 0 0 9 9Z" stroke="currentColor" stroke-width="2" opacity=".95"/>
-                  <path d="M12 16a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="currentColor" stroke-width="2" opacity=".95"/>
-                  <path d="M12 12h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                </svg>
-              </span>
-              Chutar
-            </button>
-
-            <button id="btnReset" class="btnReset" type="button" style="display:none">
-              <span class="btnIcon" aria-hidden="true">
-                <!-- Ícone (refresh) em SVG - imagem do botão "Jogar Novamente" -->
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M20 12a8 8 0 1 1-2.34-5.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M20 4v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              Jogar Novamente
-            </button>
-          </div>
-        </div>
-
-        <div id="status" class="status">
-          Faça um chute para começar!
-        </div>
-      </main>
-
-      <footer>
-        <span>💡 Regras: 0 a 50, 5 tentativas.</span>
-        <span>Feito em HTML + CSS + JS (sem bibliotecas).</span>
-      </footer>
+    <div class="meta">
+    <div class="pill">Tentativas restantes: <strong id="tries">5</strong></div>
+    <div class="pill">Intervalo: <strong>1–50</strong></div>
     </div>
-  </body>
-</html
+
+    <div class="row">
+
+    <div class="inputWrap">
+    <label for="guess">Seu chute</label>
+    <input id="guess" type="number" placeholder="Digite um número..." />
+    <div class="hint">Dica: pressione Enter para chutar.</div>
+    </div>
+
+    <div class="actions">
+
+    <button id="btnGuess" type="button">Chutar</button>
+
+    <button id="btnReset" type="button" style="display:none">
+    Jogar Novamente
+    </button>
+
+    </div>
+    </div>
+
+    <div id="status" class="status">
+    Faça um chute para começar!
+    </div>
+
+  </main>
+
+  </div>
+
+</body>
+</html>
