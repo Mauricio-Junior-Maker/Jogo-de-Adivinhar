@@ -1,4 +1,91 @@
-// Estado do jogo
+let numeroSecreto = Math.floor(Math.random() * 50) + 1
+let tentativas = 5
+
+const input = document.getElementById("guess")
+const status = document.getElementById("status")
+const tries = document.getElementById("tries")
+const btnGuess = document.getElementById("btnGuess")
+const btnReset = document.getElementById("btnReset")
+
+function chutar(){
+
+let chute = Number(input.value)
+
+if(chute < 1 || chute > 50){
+
+status.innerHTML = "Ops :( O número está entre 1 e 50"
+return
+
+}
+
+tentativas--
+tries.innerHTML = tentativas
+
+if(chute === numeroSecreto){
+
+status.innerHTML = "🎉 Você acertou!"
+fimDeJogo()
+
+}
+
+else if(chute < numeroSecreto){
+
+status.innerHTML = "🔼 O número em questão é maior"
+
+}
+
+else{
+
+status.innerHTML = "🔽 O número em questão é menor"
+
+}
+
+if(tentativas === 0 && chute !== numeroSecreto){
+
+status.innerHTML = "💀 Suas tentativas acabaram! O número era " + numeroSecreto
+fimDeJogo()
+
+}
+
+input.value = ""
+input.focus()
+
+}
+
+function fimDeJogo(){
+
+btnGuess.style.display = "none"
+btnReset.style.display = "inline-block"
+
+}
+
+function resetar(){
+
+numeroSecreto = Math.floor(Math.random() * 50) + 1
+tentativas = 5
+
+tries.innerHTML = tentativas
+status.innerHTML = "Faça um chute para começar!"
+
+btnGuess.style.display = "inline-block"
+btnReset.style.display = "none"
+
+input.value = ""
+input.focus()
+
+}
+
+btnGuess.addEventListener("click", chutar)
+
+btnReset.addEventListener("click", resetar)
+
+input.addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+chutar()
+}
+
+})// Estado do jogo
     let numeroSecreto = gerarNumero(0, 50);
     let tentativas = 5;
     let jogoAtivo = true;
@@ -106,3 +193,4 @@
     // Inicial
     atualizarTentativas();
     input.focus();
+
